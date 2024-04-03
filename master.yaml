@@ -1,0 +1,34 @@
+#cloud-config
+hostname: ${HOSTNAME}
+
+packages:
+  - jq
+  - vim
+
+users:
+  - name: awolde
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCxhxP2+11yQIRURYqgZTpbBOqgTKzG4/att/z/eyRK3mBA5YwtNDZ4b+caDLxJhtrE6VsBXPo4rTpqT34lpbPvZI13N5Vi4DJ1rMGT71UXUHKIKt3yv6xkV1cWahg1ZT4ClaJ6BSZlFjNiDRJHyyTKEyQtSRTzOsoD9leIAjvjkgvVfteB38BVsC2qwEDP2qGCXBU99HHbXhxON9E9i0kLzdNG3tDgafW+LNX/5o4koAI5IJ4TU3utRkPrIyw2jvmjQb2BVxH8RjVGkeQQJcDrKZHCiDRisnRjzk+jtso9a0Nt7+uE0eyjt9wFy7FwRwuLf7jmjZtacFt8V0iowDFC/YA1tlLMNyZt1MmNLVJcBoS9u5z1xZ48il313cJJzeH/O6Fgg+Hq6ijOebqUu8SB54UAjEmbAe3AFwSs11IkVtI5TMXQ2SDOa+6iQP5CEExzJz88Dq05R+9feK8Ozw57WC4xX5HGzjqPGT6kOAw+vu6JbaZsZSPeZY0P6lWD/6U= awolde@awolde-DS61
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCviZja6U4u2cJvnKQbdn7V2tXfbLuxntnevOXgyVXJb9L9HIDX/Bmyx4X7Bce5uiFSt+2f14GUI3TAC6DUWTBPW9GRgOodrIA7ARPDk0f7Nb/xms03iUgOihU4EuQOT/y7TgrBEbKX07C4GZ45Ri9G0ouxxZSl6jsqGKLkNXJx6NU0q7DkrcuDGeMtdcPRVE0vS8jrMnHObsdkN7RYVBpYmf0TZsmxc2ucuKxldBemamBkSNR8mNtpoge1Ew9LcV+R9pyGPiLymVn4Sm3ZrG5599sRvfbwjK5wGuoJprGHWIZQ5oiC3P+Cy46vpJ/ODWis/HC0krJogGZMAtanpff1WdF4lISiGcCa6OLJYTC36opY5WnXsATLWWA75x7DiOjzgPurHXVW3nUJ5gK8YVGDD09tj8foLNVWtNmUsDMokuv/lu4Svzr6t//g7fvmEYx5WuS6jvblT0yBHbY/muOKQlOW7Gx/Wuoz+V3BgiOg96YbBwlAoe26psHsnBCRN0k= awolde@server
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+
+  - name: student
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCxhxP2+11yQIRURYqgZTpbBOqgTKzG4/att/z/eyRK3mBA5YwtNDZ4b+caDLxJhtrE6VsBXPo4rTpqT34lpbPvZI13N5Vi4DJ1rMGT71UXUHKIKt3yv6xkV1cWahg1ZT4ClaJ6BSZlFjNiDRJHyyTKEyQtSRTzOsoD9leIAjvjkgvVfteB38BVsC2qwEDP2qGCXBU99HHbXhxON9E9i0kLzdNG3tDgafW+LNX/5o4koAI5IJ4TU3utRkPrIyw2jvmjQb2BVxH8RjVGkeQQJcDrKZHCiDRisnRjzk+jtso9a0Nt7+uE0eyjt9wFy7FwRwuLf7jmjZtacFt8V0iowDFC/YA1tlLMNyZt1MmNLVJcBoS9u5z1xZ48il313cJJzeH/O6Fgg+Hq6ijOebqUu8SB54UAjEmbAe3AFwSs11IkVtI5TMXQ2SDOa+6iQP5CEExzJz88Dq05R+9feK8Ozw57WC4xX5HGzjqPGT6kOAw+vu6JbaZsZSPeZY0P6lWD/6U= awolde@awolde-DS61
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC8OL2fPj7zNyXBO8+aRZFA5RQbiuftFdxY5zmCY6d9ckUdgisVcv1NGCeec7mXD1NZw8lukg51xYh++1cn8b2vIZzH7KLlUjl0uDE144u5AkXkr6KxWOvPaBWV8Ofle6PBNZAn/DXogRDPsWc6iVvFU1Cw49VOEaMRYCzbJ6sXItxOIvbXI4fhtIaAJS0ImN4pGX6Qmj2NRhDjTv0pQzVJxxzG2RoVvUht91T5z79lo16rCsPuW0VLkytMEDd2PhbwzoobDNX18VJTm2Grs7GI0mL9vWFoEba4wPT+2eTS0tSVlEAcdvwE21hB6Uorkhm0t9foHxtpiyzI4Qq2zeHfBhHhZCDFqhyYoToaFuZxzj8NyR2jYMc2qBq1q4Bak/WaAclGnYJ3S62PKco7CMXwZrvn9lL0ji/dIKV7Sfsrk7GVZSoas9l7GZgdHz4Edd6rXzGmA1XsBxIqBj8e5bUTD1ZgX9MusRklPvHSoFpdMSiXMO3j0AJVZ5/P1SxgkXk= student@server
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+
+runcmd:
+  - adduser awolde docker
+  - adduser student docker
+  - /bin/rm -f /etc/ssh/ssh_host_*
+  - dpkg-reconfigure openssh-server
+  - systemctl restart ssh
+  - sed -i '/student/d' /etc/shadow
+  - echo 'student:$6$kJxAx8Uq$JJvwdIUbz8ha1wKNB8CVQ5ywA67/NxVUyF4eJHH6ObQTM56uUm956kFkD3c61w6rm6CMmEJESfP5HcvzJoUUi.:19816:0:99999:7:::' >> /etc/shadow
+
+final_message: "The system is finally up, after $UPTIME seconds"
